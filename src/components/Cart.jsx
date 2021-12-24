@@ -36,6 +36,7 @@ class Cart extends React.Component {
   }
 
   render() {
+    console.log(this.props.add);
     const itemized = this.state.item.map((i) => {
       return (
         <div className="cart-container" key={i.id}>

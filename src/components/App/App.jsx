@@ -1,4 +1,5 @@
 import "./App.css";
+// import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import NavBar from "../NavBar";
 import MainPage from "../MainPage";
@@ -14,11 +15,13 @@ function App() {
           <Route path="/" exact component={MainPage} />
 
           <Route path="/products/" exact component={Products} />
-          <Route path="/cart/" exact component={Cart} />
+          {/* <Route path="/cart/" exact component={Cart} /> */}
 
-          {/* <Route path='/' element={<Home myState={this.state.myState} />} /> */}
-
-          {/* <Route exact path="/products" render={(props) => <Products clickFunc={this.buy} {...props} />} />  */}
+          <Route
+            exact
+            path="/cart/"
+            render={(props) => <Cart add="check-this" />}
+          />
         </div>
       </BrowserRouter>
     </div>
