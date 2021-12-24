@@ -1,7 +1,5 @@
 import React from "react";
 import api from "../api";
-// import Product from "./Product";
-// import { Link } from "react-router-dom";
 
 class Cart extends React.Component {
   state = { item: [] };
@@ -16,7 +14,14 @@ class Cart extends React.Component {
       }
     });
     this.setState({ item: approved });
+    console.log(this.state.item.length);
   };
+
+  remove = async (id) => {
+    await api.delete(id);
+    this.getProducts();
+  };
+
   componentDidMount() {
     this.getProducts();
   }
@@ -24,19 +29,12 @@ class Cart extends React.Component {
   render() {
     const itemized = this.state.item.map((i) => {
       return (
-        <div className="product-container" key={i.id}>
+        <div className="cart-container" key={i.id}>
           <strong>{i.name}</strong>
           <p>
             <strong> Price:</strong> ${i.price}
           </p>
-          <br />
-          <div>
-            <strong>
-              <p>About this product:</p>
-            </strong>
-            {i.description}
-          </div>
-          <br />
+          <button onClick={() => this.remove(i.id)}>Remove</button>
         </div>
       );
     });

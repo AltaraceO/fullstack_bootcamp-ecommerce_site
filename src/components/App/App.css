@@ -33,3 +33,13 @@
   text-decoration: none;
   font-size: 25px;
 }
+
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: 1px solid black;
+  /* width: 100px;
+  height: 100px; */
+  padding: 10px;
+}

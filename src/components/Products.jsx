@@ -1,7 +1,6 @@
 import React from "react";
 import api from "../api";
 import Product from "./Product";
-// import { Link } from "react-router-dom";
 
 class Products extends React.Component {
   state = { item: [] };
@@ -12,13 +11,12 @@ class Products extends React.Component {
 
     const approved = products.filter((item) => {
       if (!item.name.includes("Bought")) {
-        console.log(item);
         return item;
       }
     });
-    console.log(approved);
     this.setState({ item: approved });
   };
+
   componentDidMount() {
     this.getProducts();
   }

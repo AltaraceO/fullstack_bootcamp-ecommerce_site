@@ -5,16 +5,12 @@ class Product extends React.Component {
   state = { items: "", currItem: "" };
 
   handleClick = async (item) => {
-    console.log(item);
     const newObj = {
       name: `Bought ${item.name}`,
-      price: "itme.price",
-      description: "item.description",
-      id: " 9999",
+      price: item.price,
+      description: item.description,
     };
     await api.post("", newObj);
-
-    console.log(newObj);
   };
 
   render() {
