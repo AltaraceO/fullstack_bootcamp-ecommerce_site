@@ -10,9 +10,7 @@ class Products extends React.Component {
     const products = gotItems.data;
 
     const approved = products.filter((item) => {
-      if (!item.name.includes("Bought")) {
-        return item;
-      }
+      return !item.name.includes("Bought");
     });
     this.setState({ item: approved });
   };

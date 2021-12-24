@@ -12,8 +12,13 @@ function App() {
         <div>
           <NavBar />
           <Route path="/" exact component={MainPage} />
+
           <Route path="/products/" exact component={Products} />
           <Route path="/cart/" exact component={Cart} />
+
+          {/* <Route path='/' element={<Home myState={this.state.myState} />} /> */}
+
+          {/* <Route exact path="/products" render={(props) => <Products clickFunc={this.buy} {...props} />} />  */}
         </div>
       </BrowserRouter>
     </div>

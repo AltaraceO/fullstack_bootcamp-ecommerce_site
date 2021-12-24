@@ -9,10 +9,7 @@ class Cart extends React.Component {
     const products = gotItems.data;
 
     const approved = products.filter((item) => {
-      if (item.name.includes("Bought")) {
-        // console.log(item);
-        return item;
-      }
+      return item.name.includes("Bought");
     });
     // console.log(approved);
 
@@ -21,7 +18,9 @@ class Cart extends React.Component {
   };
 
   remove = async (id) => {
+    console.log("test");
     await api.delete(id);
+
     this.getProducts();
   };
 
