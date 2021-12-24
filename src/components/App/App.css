@@ -47,6 +47,9 @@
 }
 
 .main-home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: lightpink;
   color: red;
   border: red 2px solid;
