@@ -50,12 +50,14 @@ class Cart extends React.Component {
       );
     });
     return (
-      <div>
-        {this.state.item.length ? (
-          <button onClick={this.payment}>Pay</button>
-        ) : (
-          ""
-        )}
+      <div className="cart-main">
+        <div className="pay-button">
+          {this.state.item.length ? (
+            <button onClick={this.payment}>Pay</button>
+          ) : (
+            ""
+          )}
+        </div>
         <div className="all-container">{itemized}</div>
       </div>
     );
