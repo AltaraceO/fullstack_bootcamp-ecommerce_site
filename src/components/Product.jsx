@@ -8,7 +8,7 @@ class Product extends React.Component {
     const newObj = {
       name: `Bought ${item.name}`,
       price: item.price,
-      description: item.description,
+      Qty: 1,
     };
     await api.post("", newObj);
   };

@@ -10,16 +10,26 @@ class Cart extends React.Component {
 
     const approved = products.filter((item) => {
       if (item.name.includes("Bought")) {
+        // console.log(item);
         return item;
       }
     });
+    // console.log(approved);
+
     this.setState({ item: approved });
-    console.log(this.state.item.length);
+    // console.log(this.state.item.length);
   };
 
   remove = async (id) => {
     await api.delete(id);
     this.getProducts();
+  };
+
+  payment = () => {
+    this.state.item.forEach((item) => {
+      console.log(item.id);
+      this.remove(item.id);
+    });
   };
 
   componentDidMount() {
@@ -34,14 +44,20 @@ class Cart extends React.Component {
           <p>
             <strong> Price:</strong> ${i.price}
           </p>
+          {/* Qty: {i.Qty} */}
+          <br />
           <button onClick={() => this.remove(i.id)}>Remove</button>
         </div>
       );
     });
     return (
-      <div className="all-container">
-        <br />
-        {itemized}
+      <div>
+        {this.state.item.length ? (
+          <button onClick={this.payment}>Pay</button>
+        ) : (
+          ""
+        )}
+        <div className="all-container">{itemized}</div>
       </div>
     );
   }
