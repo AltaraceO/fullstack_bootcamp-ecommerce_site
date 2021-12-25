@@ -20,7 +20,6 @@ class App extends React.Component {
       return item.name.includes("Bought");
     });
     this.setState({ cartCounter: approved.length });
-    console.log(approved.length);
   };
 
   render() {

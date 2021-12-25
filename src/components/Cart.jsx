@@ -17,7 +17,6 @@ class Cart extends React.Component {
   };
 
   remove = async (id) => {
-    console.log("test");
     await api.delete(id);
 
     this.getProducts();
