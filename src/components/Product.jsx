@@ -11,6 +11,7 @@ class Product extends React.Component {
       Qty: 1,
     };
     await api.post("", newObj);
+    this.props.add();
   };
 
   render() {

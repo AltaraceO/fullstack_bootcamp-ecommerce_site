@@ -35,6 +35,7 @@
 .nav-bar a {
   text-decoration: none;
   font-size: 25px;
+  color: lightseagreen;
 }
 
 .cart-container {
@@ -77,4 +78,9 @@
   align-items: center;
   justify-content: center;
   padding-bottom: 30px;
+}
+
+.cart-counter {
+  font-size: x-large;
+  color: lightseagreen;
 }

@@ -21,7 +21,7 @@ class Products extends React.Component {
 
   render() {
     const itemized = this.state.item.map((i) => {
-      return <Product key={i.id} item={i} />;
+      return <Product key={i.id} item={i} add={this.props.add} />;
     });
     return (
       <div className="all-container">

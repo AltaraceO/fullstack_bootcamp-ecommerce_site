@@ -11,10 +11,9 @@ class Cart extends React.Component {
     const approved = products.filter((item) => {
       return item.name.includes("Bought");
     });
-    // console.log(approved);
 
     this.setState({ item: approved });
-    // console.log(this.state.item.length);
+    this.props.add();
   };
 
   remove = async (id) => {
@@ -26,7 +25,6 @@ class Cart extends React.Component {
 
   payment = () => {
     this.state.item.forEach((item) => {
-      console.log(item.id);
       this.remove(item.id);
     });
   };
@@ -36,7 +34,6 @@ class Cart extends React.Component {
   }
 
   render() {
-    console.log(this.props.add);
     const itemized = this.state.item.map((i) => {
       return (
         <div className="cart-container" key={i.id}>
@@ -44,7 +41,6 @@ class Cart extends React.Component {
           <p>
             <strong> Price:</strong> ${i.price}
           </p>
-          {/* Qty: {i.Qty} */}
           <br />
           <button onClick={() => this.remove(i.id)}>Remove</button>
         </div>
